@@ -1,0 +1,36 @@
+package TestNGTests;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.BeforeClass;
+
+import io.appium.java_client.android.AndroidDriver;
+
+public class FirstTestusingTestNG {
+	
+	public static AndroidDriver appiumDriver;
+
+@BeforeClass
+public void setUp() throws MalformedURLException {
+	String Username="thivyanagammaip_iXsOYv";
+	String Password="EkQqsf4VzjcqPWU4tBuY";
+
+	DesiredCapabilities cap=new DesiredCapabilities();
+	cap.setCapability("os_version","9.0");
+	cap.setCapability("device","Google Pixel 3");
+	//demo app link
+	//cap.setCapability("app","bs://3835ab84cc4dfca72fc455e3b8fc4fafc6a5d115");
+	//wikipedia app link
+	cap.setCapability("app", "bs://1cca2d133023adc6c898156a92fe615d8b109f47");
+	cap.setCapability("project","MobileTesting-IBM");
+	cap.setCapability("build","Build 1.0");
+	cap.setCapability("name","Wikipedia sample App Test");
+
+	String URL="https://"+ Username +":"+ Password +"@hub-cloud.browserstack.com/wd/hub";
+	appiumDriver=new AndroidDriver(new URL(URL),cap);
+}
+
+
+}

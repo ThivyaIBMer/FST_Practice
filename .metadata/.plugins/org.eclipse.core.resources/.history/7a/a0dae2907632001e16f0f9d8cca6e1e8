@@ -1,0 +1,30 @@
+package mobilefirsttest;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+public class FirstIOSTest {
+
+	public static void main(String[] args) throws MalformedURLException {
+		String Username="thivyanagammaip_iXsOYv";
+		String Password="EkQqsf4VzjcqPWU4tBuY";
+
+		DesiredCapabilities cap=new DesiredCapabilities();
+		cap.setCapability("os_version","12");
+		cap.setCapability("device","iPhone 7");
+		
+		cap.setCapability("app","bs://ac8f507efc691afe3287d88c882ccb5f95dd150b");
+		//wikipedia app link
+
+		cap.setCapability("project","MobileTesting-IBM");
+		cap.setCapability("build","Build IOS 1.1");
+		cap.setCapability("name","IOS App Test");
+
+		String URL="https://"+ Username +":"+ Password +"@hub-cloud.browserstack.com/wd/hub";
+		appiumDriver=new IOSDriver(new URL(URL),cap);
+	}
+	
+	
+}

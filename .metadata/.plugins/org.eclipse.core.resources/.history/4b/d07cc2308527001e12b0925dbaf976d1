@@ -1,0 +1,30 @@
+package stepDefinitions;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class Search {
+
+	@Given("User is in search page")
+	public void user_is_in_search_page() {
+	   
+	}
+
+	@When("user enters {string} product")
+	public void user_enters_product(String string) {
+	   
+	}
+
+	@When("Click on search button")
+	public void click_on_search_button() {
+	  
+	}
+
+	@Then("Product {string} shoud be displayed")
+	public void product_shoud_be_displayed(String string) {
+	  
+	}
+
+	
+}

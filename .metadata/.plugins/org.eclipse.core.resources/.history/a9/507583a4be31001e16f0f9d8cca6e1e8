@@ -1,0 +1,13 @@
+package TestNGTests;
+
+import org.testng.annotations.BeforeClass;
+
+public class FirstTestusingTestNG {
+	
+@BeforeClass
+public void setUp() {
+	
+}
+
+
+}

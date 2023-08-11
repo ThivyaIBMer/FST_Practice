@@ -1,0 +1,46 @@
+package stepDefinitions;
+
+import static org.junit.Assert.assertTrue;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class Search {
+	WebDriver driver;
+	@Given("User is in search page")
+	public void user_is_in_search_page() {
+		System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\resources\\chromedriver.exe");
+		ChromeOptions options =new ChromeOptions();
+		options.addArguments("--remote-allow-origins=*");
+		driver=new ChromeDriver(options);
+		driver.get("https://tutorialsninja.com/demo");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		driver.manage().window().maximize();
+	}
+
+	@When("user enters {string} product")
+	public void user_enters_product(String product) {
+	   driver.findElement(By.name("search")).sendKeys(product);
+	}
+
+	@When("Click on search button")
+	public void click_on_search_button() {
+		driver.findElement(By.xpath("//div[@id='search']//button")).click();
+	}
+
+	@Then("Product {string} shoud be displayed")
+	public void product_shoud_be_displayed(String product) {
+		assertTrue(driver.findElement(By.xpath("//a[contains(text(),'"+product+"')]")).isDisplayed();
+		driver.quit();
+	}
+
+	
+}

@@ -1,0 +1,20 @@
+package mobilefirsttest;
+
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+public class AndroidAppTest {
+
+	public static void main(String[] args) {
+		String Username="thivyanagammaip_iXsOYv";
+		String Password="EkQqsf4VzjcqPWU4tBuY";
+		
+		DesiredCapabilities cap=new DesiredCapabilities();
+		cap.setCapability("","");
+		cap.setCapability("","");
+		cap.setCapability("","");
+		cap.setCapability("","");
+		
+
+	}
+
+}
